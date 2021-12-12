@@ -5,6 +5,16 @@ const fs = require('fs');
 const app = express();
 
 const router = require('./router');
+
+//设置允许跨域访问该服务.
+app.all('*', function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Access-Control-Allow-Methods', '*');
+    res.header('Content-Type', 'application/json;charset=utf-8');
+    next();
+  });
+  
 //  2. 
 app.get('/list',function(req,res){
     // 1
@@ -36,5 +46,5 @@ app.get('/list',function(req,res){
 })
 
 app.listen(3001,function(){
-    console.log('express app is runing...');
+    console.log('express app is runing... http://localhost:3001/list');
 })   

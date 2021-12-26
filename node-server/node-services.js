@@ -2,6 +2,8 @@ const http = require('http');
 const url = require('url');
 const fs = require('fs');
 const app = http.createServer();
+const path = require('path')
+
 app.on('request', (req, res) => {
   // 获取请求方式            //转换小写get post
   const method = req.method.toLowerCase();

@@ -4,6 +4,7 @@ const fs = require('fs');
 // 1. 创建app
 const app = express();
 
+//引入模块 module.exports = router;
 const router = require('./router');
 
 //设置允许跨域访问该服务.

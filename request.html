@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js">
+    
+  </script>
+  <script>
+    // axios.get('http://localhost:3001/list?id=123').then(function(ret){ 
+    //   // #  拿到 ret 是一个对象      所有的对象都存在 ret 的data 属性里面
+    //   // 注意data属性是固定的用法，用于获取后台的实际数据
+    //   // console.log(ret.data)
+    //   console.log(ret)
+    // })
+
+    // axios.get('http://localhost:3001/list/123').then(function(ret){
+    //   console.log(ret.data)
+    // })
+    
+    var data = {
+      id: 123
+    }
+    var params ={
+      ...data
+    }
+    axios.get('http://localhost:3001/list', {
+      params
+    }).then(function(ret){
+      console.log(ret.data)
+    })
+  </script>
+</body>
+</html>
